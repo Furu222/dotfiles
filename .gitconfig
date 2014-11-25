@@ -1,0 +1,12 @@
+[user]
+	email = m.furudate222@gmail.com
+	name = Furudate
+[core]
+	editor = vim
+	quotepath = false
+[color]
+	ui = auto
+	branch = always
+	diff = always
+	interactive = always
+	status = always
