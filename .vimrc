@@ -49,11 +49,11 @@ set noswapfile
 " bundleで管理するディレクトリを指定
 " vim_startingでvim起動時のみ実行
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
