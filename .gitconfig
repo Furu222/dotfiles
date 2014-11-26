@@ -9,4 +9,6 @@
 	branch = always
 	diff = always
 	interactive = always
-	status = always
+    status = always
+[push]
+    default = simple
