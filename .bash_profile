@@ -8,6 +8,8 @@ eval "$(rbenv init -)"
 export PS1="[\w]\\$ "
 # Android SDKにパス通し
 export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
+# openssl用のパス通し
+export PATH=/usr/local/bin:$PATH
 
 # MacVim-kaoriyaを使うように設定(aliasもここでやっちゃう)
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
