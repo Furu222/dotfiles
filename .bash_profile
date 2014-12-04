@@ -1,6 +1,9 @@
 # Color Setting
 eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
+# rbenv Setting
+eval "$(rbenv init -)"
+
 # カレントディレクトリを表示
 export PS1="[\w]\\$ "
 # Android SDKにパス通し
