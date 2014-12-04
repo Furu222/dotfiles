@@ -3,16 +3,18 @@ syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
-
 "文字コードの指定
 set enc=utf-8
 set fenc=utf-8
 set fencs=iso-2022-jp,utf-8,enc-jp,cp932
-
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "バックアップファイルのディレクトリを指定
-set backupdir=$HOME/vimbackup
+set backupdir=$HOME/vimfiles/backup
+" Swapファイルのディレクトリを指定
+set directory=$HOME/vimfiles/swap
+" undoファイルのディレクトリを指定
+set undodir=$HOME/vimfiles/undo
 "タブの代わりに空白文字を指定
 set expandtab
 "タブ幅の設定
@@ -40,8 +42,9 @@ set showcmd
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
 " コマンドモードになる時に日本語OFF
 set imdisable
-" Swapファイルを使わない
-set noswapfile
+" クリップボード共有
+set clipboard+=unnamed
+set clipboard+=autoselect
 
 """""""""""""""""""""""""""""""""""
 " Start Visualization ZenkakuSpace
