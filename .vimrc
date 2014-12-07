@@ -2,7 +2,7 @@
 syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 "文字コードの指定
 set enc=utf-8
 set fenc=utf-8
