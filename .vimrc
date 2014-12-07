@@ -38,13 +38,34 @@ set backspace=2
 set wrapscan
 "コマンドをステータス行に表示
 set showcmd
-" Esc Esc でハイライトOFF
-nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
 " コマンドモードになる時に日本語OFF
 set imdisable
+" ウィンドウの幅より長い場合折り返す
+set wrap
+" 折り返すときに区切りのいいところで折り返す
+" breakatで折り返す文字の指定が可能
+set linebreak
+" 折り返した行に記号をつける
+"set showbreak=+\  
+" 折り返した行のインデントを合わせる
+set breakindent
 " クリップボード共有
 set clipboard+=unnamed
 set clipboard+=autoselect
+
+" "------------------------
+" Start KeyMapping Settings.
+" "------------------------
+" Unit.vimの呼び出しを<Space>uにする
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+" NERDTreeの呼び出しを Ctrl + n にする
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
+" Esc Esc でハイライトOFF
+nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
+" "------------------------
+" End KeyMapping Settings.
+" "------------------------
 
 """""""""""""""""""""""""""""""""""
 " Start Visualization ZenkakuSpace
@@ -111,20 +132,6 @@ NeoBundleCheck
 ""-------------------------
 " End Neobundle Settings.
 " "-------------------------
-
-" "------------------------
-" Start KeyMapping Settings.
-" "------------------------
-
-" Unit.vimの呼び出しを<Space>uにする
-nnoremap [unite] <Nop>
-nmap <Space>u [unite]
-" NERDTreeの呼び出しを Ctrl + n にする
-nnoremap <silent><C-n> :NERDTreeToggle<CR>
-
-" "------------------------
-" End KeyMapping Settings.
-" "------------------------
 
 " "------------------------
 " Start Unit.vim Settings.
