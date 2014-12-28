@@ -40,6 +40,8 @@ set wrapscan
 set showcmd
 " コマンドモードになる時に日本語OFF
 set imdisable
+" 補完メニューの表示幅を10にする
+set pumheight=10
 " ウィンドウの幅より長い場合折り返す
 set wrap
 " 折り返すときに区切りのいいところで折り返す
@@ -63,6 +65,11 @@ nmap <Space>u [unite]
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " Esc Esc でハイライトOFF
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
+" Yを行全体をヤンクするように
+nnoremap Y y$
+" 数字のインクリメント・デクリメントをC-+, C--にする
+nnoremap + <C-a>
+nnoremap - <C-x>
 " "------------------------
 " End KeyMapping Settings.
 " "------------------------
