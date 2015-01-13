@@ -1,10 +1,11 @@
 # Color Setting
 eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
-# rbenv, pyenv, plenv Setting
+# rbenv, pyenv, plenv, phpenv Setting
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(plenv init -)"
+eval "$(phpenv init-)"
 
 # カレントディレクトリを表示
 export PS1="[\w]\\$ "
