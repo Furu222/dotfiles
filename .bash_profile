@@ -5,7 +5,9 @@ eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(plenv init -)"
+export PATH=$PATH:$HOME/.phpenv/bin
 eval "$(phpenv init-)"
+
 
 # カレントディレクトリを表示
 export PS1="[\w]\\$ "
