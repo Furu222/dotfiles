@@ -16,6 +16,11 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
+# brew api token
+if [ -f ~/.brew_api_token ];then
+    source ~/.brew_api_token
+fi
+
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
