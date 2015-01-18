@@ -1,3 +1,4 @@
+gist-vim
 neobundle.vim
 neomru.vim
 nerdtree
@@ -5,3 +6,4 @@ unite.vim
 vim-autoclose
 vim-quickrun
 vimproc
+webapi-vim

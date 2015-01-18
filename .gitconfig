@@ -12,3 +12,5 @@
     status = always
 [push]
     default = simple
+[github]
+	user = Furu222

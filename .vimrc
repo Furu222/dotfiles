@@ -124,6 +124,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " UniteでGrep使えるように
 NeoBundle 'Shougo/vimproc'
+" vimでgistアップロードできるように
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 "*****************
 "End Plugins
 "*****************
