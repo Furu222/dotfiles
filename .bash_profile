@@ -23,6 +23,10 @@ if [ -f ~/.brew_api_token ];then
     source ~/.brew_api_token
 fi
 
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
