@@ -8,8 +8,6 @@ export PATH=$PATH:$HOME/.phpenv/bin
 eval "$(phpenv init -)"
 eval "$(rbenv init -)"
 
-# カレントディレクトリを表示
-export PS1="[\w]\\$ "
 # Android SDKにパス通し
 export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 
@@ -26,6 +24,15 @@ fi
 # nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# git-completion
+source $HOME/dotfiles/.git-completion.bash
+source $HOME/dotfiles/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+
+# ターミナルの表示
+# カレントディレクトリを表示,Gitのカレントブランチ名表示
+export PS1="\[\033[34m\][\w]\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ "
 
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
