@@ -1,6 +1,8 @@
 # Color Setting
 eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
+PATH=$(cat /etc/paths | tr -s "\n" ":") # defaultのPATH設定
+PATH=${PATH%:}
 # rbenv, pyenv, plenv, phpenv Setting
 eval "$(pyenv init -)"
 eval "$(plenv init -)"
