@@ -54,6 +54,12 @@ set breakindent
 " クリップボード共有
 set clipboard+=unnamed
 set clipboard+=autoselect
+" quickrun実行時に出力バッファへカーソルを移動
+let g:quickrun_config = {
+\   "_":{
+\       "outputter/buffer/into":1,
+\   },
+\}
 
 " "------------------------
 " Start KeyMapping Settings.
