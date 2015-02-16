@@ -13,10 +13,8 @@ eval "$(rbenv init -)"
 # Android SDKにパス通し
 export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 
-# MacVim-kaoriyaを使うように設定(aliasもここでやっちゃう)
+# MacVim-kaoriyaを使うように設定
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 # brew api token
 if [ -f ~/.brew_api_token ];then
@@ -31,10 +29,6 @@ source $(brew --prefix nvm)/nvm.sh
 source $HOME/dotfiles/.git-completion.bash
 source $HOME/dotfiles/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
-
-# ターミナルの表示
-# カレントディレクトリを表示,Gitのカレントブランチ名表示
-export PS1="\[\033[34m\][\w]\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ "
 
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
