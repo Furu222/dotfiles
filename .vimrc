@@ -213,6 +213,7 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 let g:previm_open_cmd = 'open -a Google\ Chrome'
+" <Space> p でprevim開いて <Space> p + o でブラウザ開く、<Space> p + r でリロード
 nnoremap [previm] <Nop>
 nmap <Space>p [previm]
 nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
