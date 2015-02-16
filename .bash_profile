@@ -28,7 +28,6 @@ source $(brew --prefix nvm)/nvm.sh
 # git-completion
 source $HOME/dotfiles/.git-completion.bash
 source $HOME/dotfiles/.git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
 
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
