@@ -54,6 +54,7 @@ set breakindent
 " クリップボード共有
 set clipboard+=unnamed
 set clipboard+=autoselect
+
 " quickrun実行時に出力バッファへカーソルを移動
 let g:quickrun_config = {
 \   "_":{
@@ -132,6 +133,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc'
 " vimでgistアップロードできるように
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+" vimでMarkdownのプレビュー
+NeoBundle 'kannokanno/previm'
 "*****************
 "End Plugins
 "*****************
@@ -198,3 +201,23 @@ vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>")
 " "------------------------
 " End Unit.vim Settings.
 " "------------------------
+
+
+" "------------------------
+" Start previm Settings.
+" "------------------------
+
+" mdファイルに対応
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+nnoremap [previm] <Nop>
+nmap <Space>p [previm]
+nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
+nnoremap <silent> [previm]r :call previm#refresh()<CR>
+
+" "------------------------
+" " End previm Settings.
+" " "------------------------

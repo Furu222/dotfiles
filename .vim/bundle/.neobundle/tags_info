@@ -2,6 +2,7 @@ gist-vim
 neobundle.vim
 neomru.vim
 nerdtree
+previm
 unite.vim
 vim-autoclose
 vim-quickrun
