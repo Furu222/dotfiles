@@ -6,10 +6,10 @@
 	quotepath = false
 [color]
 	ui = auto
-	branch = always
-	diff = always
-	interactive = always
-    status = always
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 [push]
     default = simple
 [github]
