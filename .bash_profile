@@ -13,6 +13,9 @@ eval "$(rbenv init -)"
 # Android SDKにパス通し
 export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 
+# /usr/local/sbin
+export PATH=$PATH:/usr/local/sbin
+
 # MacVim-kaoriyaを使うように設定
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
