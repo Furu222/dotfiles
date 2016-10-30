@@ -10,6 +10,7 @@ alias pbc='pbcopy'
 # Use for MacVim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias view='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/view "$@"'
 
 # sudoコマンド打った時にenv-reset
 # sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
