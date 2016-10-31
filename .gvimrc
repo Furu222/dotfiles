@@ -1,13 +1,13 @@
 " Color Setting
 syntax enable
 set background=dark
-colorscheme slarized
+colorscheme solarized
 let g:solarized_termcolors=256
 
 " Encoding Setting
 set enc=utf-8
 set fenc=utf-8
-set fenc=iso-2022-jp,utf-8,enc-jp,cp932
+set fencs=iso-2022-jp,utf-8,enc-jp,cp932
 
 " 新しい行のインデントを現在行と同じに
 set autoindent
