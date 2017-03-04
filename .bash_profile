@@ -32,6 +32,9 @@ source $(brew --prefix nvm)/nvm.sh
 source $HOME/dotfiles/.git-completion.bash
 source $HOME/dotfiles/.git-prompt.sh
 
+# bash_completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
