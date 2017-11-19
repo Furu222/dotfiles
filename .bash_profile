@@ -37,3 +37,8 @@ source $HOME/dotfiles/.git-prompt.sh
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
 fi
+
+# phpbrew/bashrc読み込み
+if [ -f ~/.phpbrew/bashrc ] ; then
+    . ~/.phpbrew/bashrc
+fi
