@@ -3,11 +3,9 @@ eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
 PATH=$(cat /etc/paths | tr -s "\n" ":") # defaultのPATH設定
 PATH=${PATH%:}
-# rbenv, pyenv, plenv, phpenv Setting
+# rbenv, pyenv, plenv Setting
 eval "$(pyenv init -)"
 eval "$(plenv init -)"
-export PATH=$PATH:$HOME/.phpenv/bin
-eval "$(phpenv init -)"
 eval "$(rbenv init -)"
 
 # Android SDKにパス通し
