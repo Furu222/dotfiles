@@ -6,13 +6,19 @@ eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 #PATH=${PATH%:}
 
 ## /usr/local/sbin
-export PATH=$PATH:/usr/local/sbin
+if [ $(echo $PATH | grep '/usr/local/sbin') ]; then
+  export PATH=$PATH:/usr/local/sbin
+fi
 
 ## for Android SDK
-export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
+if [ $(echo $PATH | grep 'Eclipse') ]; then
+  export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
+fi
 
 ## for MacVim-kaoriya
-export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+if [ $(echo $PATH | grep 'MacVim') ]; then
+  export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+fi
 
 # EDITORをMacVim-kaoriyaに。
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
@@ -23,9 +29,15 @@ if [ -f ~/.brew_api_token ];then
 fi
 
 # rbenv, pyenv, plenv Setting
-eval "$(pyenv init -)"
-eval "$(plenv init -)"
-eval "$(rbenv init -)"
+if [ -z $PYENV_SHELL ]; then
+  eval "$(pyenv init -)"
+fi
+if [ -z $PLENV_SHELL ]; then
+  eval "$(plenv init -)"
+fi
+if [ -z $RBENV_SHELL ]; then
+  eval "$(rbenv init -)"
+fi
 
 # nvm
 export NVM_DIR=~/.nvm

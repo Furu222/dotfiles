@@ -27,6 +27,8 @@ alias gs='git status'
 # echo $PATH
 alias PATH='echo $PATH | tr -s ":" "\n"'
 alias path='echo $PATH | tr -s ":" "\n"'
+alias PATHS='echo $PATH | tr -s ":" "\n" | sort'
+alias paths='echo $PATH | tr -s ":" "\n" | sort'
 
 # sudoコマンド打った時にenv-reset
 ## sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
