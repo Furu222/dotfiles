@@ -5,12 +5,24 @@ alias la='gls -aF --color=auto'
 alias ll='gls -lFh --color=auto'
 alias lal='gls -alFh --color=auto'
 
+# move '..' parent directory
+alias ..='cd ..'
+# check overwrite mv & cp
+alias mv='mv -i'
+alias cp='cp -i'
+
+# pbcopy
 alias pbc='pbcopy'
 
-# Use for MacVim
+# MacVim(require PATH to MacVim
 alias vim='env LANG=ja_JP.UTF-8 vim "$@"'
 alias vi=vim
 alias view='env LANG=ja_JP.UTF-8 view "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/bin/vim "$@"'
+#alias view='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/bin/view "$@"'
+
+# git
+alias gs='git status'
 
 # sudoコマンド打った時にenv-reset
 ## sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
