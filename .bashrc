@@ -14,7 +14,7 @@ alias cp='cp -i'
 # pbcopy
 alias pbc='pbcopy'
 
-# MacVim(require PATH to MacVim
+# MacVim(require PATH to MacVim)
 alias vim='env LANG=ja_JP.UTF-8 vim "$@"'
 alias vi=vim
 alias view='env LANG=ja_JP.UTF-8 view "$@"'
@@ -24,6 +24,10 @@ alias view='env LANG=ja_JP.UTF-8 view "$@"'
 # git
 alias gs='git status'
 
+# echo $PATH
+alias PATH='echo $PATH | tr -s ":" "\n"'
+alias path='echo $PATH | tr -s ":" "\n"'
+
 # sudoコマンド打った時にenv-reset
 ## sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
 alias sudo='sudo -E '
@@ -31,7 +35,7 @@ alias sudo='sudo -E '
 # for perl/python env
 ## brew doctorのWarningを消すためbrew実行時は ~/*env/shims をPATHから除外(PATH/before/after/の形式でリプレイスしている（この場合Afterは未指定）。
 alias brew="env PATH=${PATH/\/Users\/furudate\/\.*env\/shims:/} brew"
-###### alias ######
+###### End alias ######
 
 # sudo completion
 complete -cf sudo
