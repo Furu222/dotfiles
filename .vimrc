@@ -1,56 +1,72 @@
-"Color設定
+" Color設定
 syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
-"文字コードの指定
+
+" 文字コードの指定
 set enc=utf-8
 set fenc=utf-8
-set fencs=iso-2022-jp,utf-8,enc-jp,cp932
-"新しい行のインデントを現在行と同じにする
-set autoindent
-"バックアップファイルのディレクトリを指定
-set backupdir=$HOME/vimfiles/backup
-" Swapファイルのディレクトリを指定
-set directory=$HOME/vimfiles/swap
-" undoファイルのディレクトリを指定
-set undodir=$HOME/vimfiles/undo
-"タブの代わりに空白文字を指定
-set expandtab
-"タブ幅の設定
-set tabstop=4
-set shiftwidth=4
-"ルーラーを表示
+set fencs=ucs-bom,iso-2022-jp,sjis,cp932,euc-jp,cp20932,utf-8
+
+" backup/swap/undoディレクトリ指定
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/swap
+set undodir=$HOME/.vim/undo
+
+" 表示
+"" ルーラーを表示
 set ruler
-"タブや改行を表示
+"" タブや改行を表示
 set nolist
-"インクリメンタルサーチを行う
-set incsearch
-"行番号の表示
+"" 行番号の表示
 set number
-"閉括弧が入力された時、対応する括弧を強調する
+"" 閉括弧が入力された時、対応する括弧を強調する
 set showmatch
-"新しい行を作った時に高度な自動インデントを行う
-set smarttab
-"バックスペースでインデントや改行を削除できるように
-set backspace=2
-"検索時にファイルの最後までいったら最初に戻る
-set wrapscan
-"コマンドをステータス行に表示
+"" コマンドをステータス行に表示
 set showcmd
-" コマンドモードになる時に日本語OFF
-set imdisable
-" 補完メニューの表示幅を10にする
+"" 補完メニューの表示幅を10にする
 set pumheight=10
-" ウィンドウの幅より長い場合折り返す
+"" ウィンドウの幅より長い場合折り返す
 set wrap
-" 折り返すときに区切りのいいところで折り返す
-" breakatで折り返す文字の指定が可能
+"" 折り返すときに区切りのいいところで折り返す
+""" breakatで折り返す文字の指定が可能
 set linebreak
-" 折り返した行に記号をつける
+"" 折り返した行に記号をつける
 "set showbreak=+\  
-" 折り返した行のインデントを合わせる
+"" 折り返した行のインデントを合わせる
 set breakindent
+
+" インデント設定
+"" タブの代わりにスペース
+set expandtab
+"" 通常時とインデント時のタブ幅
+set tabstop=2
+set shiftwidth=0
+"" shiftwidth分自動インデント&削除
+set smarttab
+"" 自動インデント
+set autoindent
+"" 高度なインデント
+set smartindent
+"" ファイルタイプによってインデント変更
+augroup fileTypeIndent
+  autocmd!
+  autocmd FileType json setlocal tabstop=4
+augroup END
+"" バックスペースでautoindentを超えて削除&行の連結（前の行も削除可能）
+set backspace=2
+
+" 検索設定
+"" インクリメンタルサーチを行う
+set incsearch
+"" 検索時にファイルの最後までいったら最初に戻る
+set wrapscan
+"" 大文字小文字無視
+set ignorecase
+"" 大文字が入っている場合のみignorecase=OFF
+set smartcase
+
 " クリップボード共有
 set clipboard+=unnamed
 set clipboard+=autoselect
@@ -71,19 +87,24 @@ nmap <Space>u [unite]
 " NERDTreeの呼び出しを Ctrl + n にする
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " Esc Esc でハイライトOFF
-nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
+nnoremap <Esc><Esc> :nohlsearch<CR>
 " Yを行全体をヤンクするように
 nnoremap Y y$
 " 数字のインクリメント・デクリメントをC-+, C--にする
 nnoremap + <C-a>
 nnoremap - <C-x>
+" Shift Tabで逆インデント
+nnoremap <S-tab> <<
+inoremap <S-tab> <C-d>
+" Tabでインデント（Normarlモード時）
+nnoremap <Tab> >>
 " "------------------------
 " End KeyMapping Settings.
 " "------------------------
 
-"""""""""""""""""""""""""""""""""""
+" "--------------------------------
 " Start Visualization ZenkakuSpace
-"""""""""""""""""""""""""""""""""""
+" "--------------------------------
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermbg=LightMagenta guibg=LightMagenta
 endfunction
@@ -96,10 +117,9 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
-"""""""""""""""""""""""""""""""""""
+" "--------------------------------
 " End Visualization ZenkakuSpace
-"""""""""""""""""""""""""""""""""""
-
+" "--------------------------------
 
 "---------------------------
 "" Start Neobundle Settings.
