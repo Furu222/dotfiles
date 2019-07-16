@@ -1,6 +1,6 @@
 [user]
 	email = m.furudate222@gmail.com
-	name = Furudate
+	name = Furu222
 [core]
 	editor = vim
 	quotepath = false
@@ -14,3 +14,5 @@
     default = simple
 [github]
 	user = Furu222
+[credential]
+	helper = osxkeychain
