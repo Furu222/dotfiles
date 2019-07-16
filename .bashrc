@@ -1,4 +1,4 @@
-###### alias #####
+###### alias ######
 # ls関連
 alias ls='gls -F --color=auto'
 alias la='gls -aF --color=auto'
@@ -8,17 +8,18 @@ alias lal='gls -alFh --color=auto'
 alias pbc='pbcopy'
 
 # Use for MacVim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias view='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/view "$@"'
+alias vim='env LANG=ja_JP.UTF-8 vim "$@"'
+alias vi=vim
+alias view='env LANG=ja_JP.UTF-8 view "$@"'
 
 # sudoコマンド打った時にenv-reset
-# sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
+## sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
 alias sudo='sudo -E '
 
-# Exclusion php/python env config file
-## brew doctorのWarningを消す
+# for perl/python env
+## brew doctorのWarningを消すためbrew実行時は ~/*env/shims をPATHから除外(PATH/before/after/の形式でリプレイスしている（この場合Afterは未指定）。
 alias brew="env PATH=${PATH/\/Users\/furudate\/\.*env\/shims:/} brew"
+###### alias ######
 
 # sudo completion
 complete -cf sudo

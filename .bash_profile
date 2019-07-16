@@ -1,26 +1,31 @@
 # Color Setting
 eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
-PATH=$(cat /etc/paths | tr -s "\n" ":") # defaultのPATH設定
-PATH=${PATH%:}
-# rbenv, pyenv, plenv Setting
-eval "$(pyenv init -)"
-eval "$(plenv init -)"
-eval "$(rbenv init -)"
+# PATH Setting
+#PATH=$(cat /etc/paths | tr -s "\n" ":") # defaultのPATH設定
+#PATH=${PATH%:}
 
-# Android SDKにパス通し
-export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
-
-# /usr/local/sbin
+## /usr/local/sbin
 export PATH=$PATH:/usr/local/sbin
 
-# MacVim-kaoriyaを使うように設定
+## for Android SDK
+export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
+
+## for MacVim-kaoriya
+export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+
+# EDITORをMacVim-kaoriyaに。
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 # brew api token
 if [ -f ~/.brew_api_token ];then
     source ~/.brew_api_token
 fi
+
+# rbenv, pyenv, plenv Setting
+eval "$(pyenv init -)"
+eval "$(plenv init -)"
+eval "$(rbenv init -)"
 
 # nvm
 export NVM_DIR=~/.nvm
