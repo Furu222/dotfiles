@@ -16,13 +16,18 @@ alias pbc='pbcopy'
 
 # MacVim(require PATH to MacVim)
 alias vim='env LANG=ja_JP.UTF-8 vim "$@"'
-alias vi=vim
+alias vi='vim'
 alias view='env LANG=ja_JP.UTF-8 view "$@"'
 #alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/bin/vim "$@"'
 #alias view='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/bin/view "$@"'
 
 # git
 alias gs='git status'
+alias gst='gs'
+alias ga='git add ./'
+alias gaa='git add "$@"'
+alias gc='git commit'
+alias gcm='git commit -m "$@"'
 
 # echo $PATH
 alias PATH='echo $PATH | tr -s ":" "\n"'
