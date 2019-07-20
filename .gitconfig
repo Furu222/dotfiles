@@ -16,3 +16,5 @@
 	user = Furu222
 [credential]
 	helper = osxkeychain
+[commit]
+	template = /Users/furudate/dotfiles/commit_template/.commit_template
