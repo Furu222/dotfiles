@@ -39,9 +39,13 @@ alias paths='echo $PATH | tr -s ":" "\n" | sort'
 ## sudo時alias引き継ぎ（' 'を最後に入れることで指定コマンド後にもaliasを利用する）
 alias sudo='sudo -E '
 
-# for perl/python env
+# brew
+## for perl/python env
 ## brew doctorのWarningを消すためbrew実行時は ~/*env/shims をPATHから除外(PATH/before/after/の形式でリプレイスしている（この場合Afterは未指定）。
-alias brew="env PATH=${PATH/\/Users\/furudate\/\.*env\/shims:/} brew"
+alias brew='env PATH=${PATH/\/Users\/furudate\/\.*env\/shims:/} brew'
+
+## brew cask
+alias brewc='brew cask'
 ###### End alias ######
 
 # sudo completion
