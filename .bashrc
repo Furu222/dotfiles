@@ -28,6 +28,8 @@ alias ga='git add ./'
 alias gaa='git add "$@"'
 alias gc='git commit'
 alias gcm='git commit -m "$@"'
+alias gp='git push'
+alias gpl='git pull'
 
 # echo $PATH
 alias PATH='echo $PATH | tr -s ":" "\n"'
