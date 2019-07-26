@@ -6,17 +6,17 @@ eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 #PATH=${PATH%:}
 
 ## /usr/local/sbin
-if [ $(echo $PATH | grep '/usr/local/sbin') ]; then
+if [ ! $(echo $PATH | grep '/usr/local/sbin') ]; then
   export PATH=$PATH:/usr/local/sbin
 fi
 
 ## for Android SDK
-if [ $(echo $PATH | grep 'Eclipse') ]; then
+if [ ! $(echo $PATH | grep 'Eclipse') ]; then
   export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 fi
 
 ## for MacVim-kaoriya
-if [ $(echo $PATH | grep 'MacVim') ]; then
+if [ ! $(echo $PATH | grep 'MacVim') ]; then
   export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
