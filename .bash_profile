@@ -49,15 +49,6 @@ fi
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
 
-# git-completion
-if [ -f "${HOME}/dotfiles/.git-completion.bash" -a -f "${HOME}/dotfiles/.git-prompt.sh" ] ; then
-    source $HOME/dotfiles/.git-completion.bash
-    source $HOME/dotfiles/.git-prompt.sh
-fi
-
-# bash_completion
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
 # bashrcの読み込み
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc

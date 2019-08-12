@@ -50,6 +50,22 @@ alias brew='env PATH=${PATH/\/Users\/furudate\/\.*env\/shims:/} brew'
 alias brewc='brew cask'
 ###### End alias ######
 
+
+##### Start Completion #####
+# git-completion
+if [ -f "${HOME}/dotfiles/.git-completion.bash" -a -f "${HOME}/dotfiles/.git-prompt.sh" ] ; then
+    source $HOME/dotfiles/.git-completion.bash
+    source $HOME/dotfiles/.git-prompt.sh
+fi
+
+# bash_completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH=/Users/furudate/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+##### End Completion #####
+
+
 # sudo completion
 complete -cf sudo
 
