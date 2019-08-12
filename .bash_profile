@@ -15,6 +15,11 @@ if [ ! $(echo $PATH | grep 'Eclipse') ]; then
   export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 fi
 
+## for nodebrew
+if [ ! $(echo $PATH | grep 'nodebrew') ]; then
+  export PATH=$PATH:~/.nodebrew/current/bin
+fi
+
 ## for MacVim-kaoriya
 if [ ! $(echo $PATH | grep 'MacVim') ]; then
   export PATH=/Applications/MacVim.app/Contents/bin:$PATH
@@ -39,9 +44,10 @@ if [ -z $RBENV_SHELL ]; then
   eval "$(rbenv init -)"
 fi
 
+# nvm migration to nodebrew
 # nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+#export NVM_DIR=~/.nvm
+#source $(brew --prefix nvm)/nvm.sh
 
 # git-completion
 if [ -f "${HOME}/dotfiles/.git-completion.bash" -a -f "${HOME}/dotfiles/.git-prompt.sh" ] ; then
