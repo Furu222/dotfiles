@@ -1,6 +1,11 @@
 # Color Setting
 eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 
+# Locale Settings
+## LANGを設定しとかないとwgetなどでエラーになる。
+## デフォルト指定なしになる。ターミナルの設定（起動時にlocale設定）がうまく動いていない？
+export LANG=en_US.UTF-8
+
 # PATH Setting
 #PATH=$(cat /etc/paths | tr -s "\n" ":") # defaultのPATH設定
 #PATH=${PATH%:}
