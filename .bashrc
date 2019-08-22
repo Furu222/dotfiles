@@ -4,6 +4,13 @@ alias ls='gls -F --color=auto'
 alias la='gls -aF --color=auto'
 alias ll='gls -lFh --color=auto'
 alias lal='gls -alFh --color=auto'
+alias lla='lal'
+alias llt='gls -Flth --color=auto'
+alias lltr='gls -Flthr --color=auto'
+alias llat='gls -Flath --color=auto'
+alias llatr='gls -Flathr --color=auto'
+alias lalt='gls -Flath --color=auto'
+alias laltr='gls -Flathr --color=auto'
 
 # move '..' parent directory
 alias ..='cd ..'
