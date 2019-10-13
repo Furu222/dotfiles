@@ -80,6 +80,17 @@ complete -cf sudo
 complete -C /usr/local/bin/terraform terraform
 ##### End Completion #####
 
-# Show Git-branch name in terminal
+
+# Edit PS1
+## show git branch * status
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[00m\]\\$ "
+## show terraform workspace
+function __terraform_ps1() {
+  if [ -d .terraform ] || [ -d ../.terraform ] || $(pwd | grep -q 'terraform') ; then
+    tf_workspace="$(terraform workspace show 2>/dev/null)"
+    echo " (${tf_workspace})"
+  fi
+}
+
+#export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[00m\]\\$ " # non-terraform
+export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[35m\]\$(__terraform_ps1)\[\033[00m\]\\$ "
