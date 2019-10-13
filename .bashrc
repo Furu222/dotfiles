@@ -72,11 +72,13 @@ fi
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=/Users/furudate/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
-##### End Completion #####
-
 
 # sudo completion
 complete -cf sudo
+
+# terraform completion
+complete -C /usr/local/bin/terraform terraform
+##### End Completion #####
 
 # Show Git-branch name in terminal
 GIT_PS1_SHOWDIRTYSTATE=true
