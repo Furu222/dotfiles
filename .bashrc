@@ -86,7 +86,7 @@ complete -C /usr/local/bin/terraform terraform
 GIT_PS1_SHOWDIRTYSTATE=true
 ## show terraform workspace
 function __terraform_ps1() {
-  if [ -d .terraform ] || [ -d ../.terraform ] || $(pwd | grep -q 'terraform') ; then
+  if [ -d .terraform ]; then
     tf_workspace="$(terraform workspace show 2>/dev/null)"
     echo " (${tf_workspace})"
   fi
