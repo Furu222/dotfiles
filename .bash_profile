@@ -30,6 +30,11 @@ if [ ! $(echo $PATH | grep 'MacVim') ]; then
   export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
+## for self make cmd
+if [ ! $(echo $PATH | grep '~/bin/:') ]; then
+  export PATH=~/bin:$PATH
+fi
+
 # EDITORをMacVim-kaoriyaに。
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
