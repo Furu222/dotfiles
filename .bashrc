@@ -1,16 +1,33 @@
 ###### alias ######
 # ls関連
-alias ls='gls -F --color=auto'
-alias la='gls -aF --color=auto'
-alias ll='gls -lFh --color=auto'
-alias lal='gls -alFh --color=auto'
-alias lla='lal'
-alias llt='gls -Flth --color=auto'
-alias lltr='gls -Flthr --color=auto'
-alias llat='gls -Flath --color=auto'
-alias llatr='gls -Flathr --color=auto'
-alias lalt='gls -Flath --color=auto'
-alias laltr='gls -Flathr --color=auto'
+if type "gls" > /dev/null 2>&1
+then
+    # for mac
+    alias ls='gls -F --color=auto'
+    alias la='gls -aF --color=auto'
+    alias ll='gls -lFh --color=auto'
+    alias lal='gls -alFh --color=auto'
+    alias lla='lal'
+    alias llt='gls -Flth --color=auto'
+    alias lltr='gls -Flthr --color=auto'
+    alias llat='gls -Flath --color=auto'
+    alias llatr='gls -Flathr --color=auto'
+    alias lalt='gls -Flath --color=auto'
+    alias laltr='gls -Flathr --color=auto'
+else
+    # for windows
+    alias ls='ls -F --color=auto'
+    alias la='ls -aF --color=auto'
+    alias ll='ls -lFh --color=auto'
+    alias lal='ls -alFh --color=auto'
+    alias lla='lal'
+    alias llt='ls -Flth --color=auto'
+    alias lltr='ls -Flthr --color=auto'
+    alias llat='ls -Flath --color=auto'
+    alias llatr='ls -Flathr --color=auto'
+    alias lalt='ls -Flath --color=auto'
+    alias laltr='ls -Flathr --color=auto'
+fi
 
 # move '..' parent directory
 alias ..='cd ..'
@@ -81,7 +98,17 @@ complete -C /usr/local/bin/terraform terraform
 ##### End Completion #####
 
 
-# Edit PS1
+##### Start History Command #####
+HISTTIMEFORMAT='%F %T '
+HISTSIZE=100000
+HISTFILESIZE=100000
+#HISTIGNORE='history:pwd:ls:ls *:ll:w:top:df *'
+HISTCONTROL=ignoreboth # 直前と重複したものは記録しない(ignoredups), スペースで始まるコマンドを無視(ignorespace)
+PROMPT_COMMAND='history -a; history -c; history -r' # 履歴のリアルタイム反映
+##### End History Command #####
+
+
+##### Start PS1#####
 ## show git branch * status
 GIT_PS1_SHOWDIRTYSTATE=true
 ## show terraform workspace
@@ -94,3 +121,23 @@ function __terraform_ps1() {
 
 #export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[00m\]\\$ " # non-terraform
 export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[35m\]\$(__terraform_ps1)\[\033[00m\]\\$ "
+##### End PS1#####
+
+##### Start Other Settings #####
+# Windowサイズ変更時LINEとCOLUMNSの値を自動調整
+shopt -s checkwinsize
+# lesspipeでnon-text file でもlessできるように
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# chrootしたときに変数に格納
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+# color settings
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+# Ubuntu設定
+## Add an "alert" alias for long running commands.  Use like so:
+##   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+##### End Other Settings #####

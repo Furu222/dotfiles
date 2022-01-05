@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wd=$(dirname $0) # working directory(default: ~/dotfiles)
+wd=~/dotfiles # set working directory(default: ~/dotfiles)
 ctdir=${wd}/commit_template # if change directory name, change .gitconfig.
 
 ln -s ${wd}/.bash_profile ~/.bash_profile
@@ -11,6 +11,11 @@ ln -s ${wd}/.vim ~/.vim
 ln -s ${wd}/.vimrc ~/.vimrc
 ln -s ${wd}/.gitconfig ~/.gitconfig
 ln -s ${wd}/.inputrc ~/.inputrc
+
+# mkdir vim directory
+mkdir ${wd}/.vim/swap
+mkdir ${wd}/.vim/undo
+mkdir ${wd}/.vim/backup
 
 # set & refresh git commit template
 if [ ! -d  ${ctdir} ]; then

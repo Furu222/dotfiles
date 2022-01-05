@@ -17,4 +17,4 @@
 [credential]
 	helper = osxkeychain
 [commit]
-	template = /Users/furudate/dotfiles/commit_template/.commit_template
+	template = ~/dotfiles/commit_template/.commit_template

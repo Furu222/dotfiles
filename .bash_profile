@@ -1,5 +1,7 @@
 # Color Setting
-eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
+if [ -f ~/solarized/dircolors-solarized/dircolors.ansi-dark ]; then
+    eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
+fi
 
 # Locale Settings
 ## LANGを設定しとかないとwgetなどでエラーになる。
@@ -17,7 +19,7 @@ fi
 
 ## for Android SDK
 if [ ! $(echo $PATH | grep 'Eclipse') ]; then
-  export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
+    [[ $(uname -a) =~ Mac ]]; export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 fi
 
 ## for nodebrew
@@ -27,7 +29,7 @@ fi
 
 ## for MacVim-kaoriya
 if [ ! $(echo $PATH | grep 'MacVim') ]; then
-  export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+  [[ $(uname -a) =~ Mac ]]; export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
 ## for self make cmd
@@ -35,8 +37,12 @@ if [ ! $(echo $PATH | grep '~/bin/:') ]; then
   export PATH=~/bin:$PATH
 fi
 
-# EDITORをMacVim-kaoriyaに。
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+# EDITORをMacVim-kaoriya or vimに
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+    export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+else
+    export EDITOR=/usr/bin/vim
+fi
 
 # brew api token
 if [ -f ~/.brew_api_token ];then

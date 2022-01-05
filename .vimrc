@@ -1,7 +1,7 @@
 " Color設定
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 let g:solarized_termtrans=1
 
 " 文字コードの指定
