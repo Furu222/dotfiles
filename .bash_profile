@@ -13,22 +13,22 @@ export LANG=en_US.UTF-8
 #PATH=${PATH%:}
 
 ## /usr/local/sbin
-if [ ! $(echo $PATH | grep '/usr/local/sbin') ]; then
+if [[ ! $PATH =~ '/usr/local/sbin' ]]; then
   export PATH=$PATH:/usr/local/sbin
 fi
 
 ## for Android SDK
-if [ ! $(echo $PATH | grep 'Eclipse') ]; then
+if [[ ! $PATH =~ 'Eclipse' ]]; then
     [[ $(uname -a) =~ Mac ]]; export PATH=$PATH:/Applications/Eclipse/android-sdk/platform-tools
 fi
 
 ## for nodebrew
-if [ ! $(echo $PATH | grep 'nodebrew') ]; then
+if [[ ! $PATH =~ 'nodebrew' ]]; then
   export PATH=$PATH:~/.nodebrew/current/bin
 fi
 
 ## for MacVim-kaoriya
-if [ ! $(echo $PATH | grep 'MacVim') ]; then
+if [[ ! $PATH =~ 'MacVim' ]]; then
   [[ $(uname -a) =~ Mac ]]; export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
