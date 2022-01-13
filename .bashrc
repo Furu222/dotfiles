@@ -35,8 +35,20 @@ alias ..='cd ..'
 alias mv='mv -i'
 alias cp='cp -i'
 
-# pbcopy
+# pbcopy and pbpaste
+## pbcopy for ubuntu
+if type "clip.exe" > /dev/null 2>&1
+then
+  alias pbcopy='clip.exe'
+fi
+## pbpaste for ubuntu
+if type "powershell.exe" > /dev/null 2>&1
+then
+  alias pbpaste="powershell.exe -command 'Get-Clipboard'"
+fi
+
 alias pbc='pbcopy'
+alias pbp='pbpaste'
 
 # MacVim(require PATH to MacVim)
 alias vim='env LANG=ja_JP.UTF-8 vim "$@"'
