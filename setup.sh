@@ -27,6 +27,7 @@ git pull origin master
 
 # export ls color to file
 ## if 777 directory is missmatch color in results of the ls command, rewrite OTEHR_WRITEABLE
+## OTHER_WRITEALE can setting value : https://www.fulldigit.co.jp/server_env/ls_colors.html
 if type "dircolors" > /dev/null 2>&1
 then
   dircolors -p > ~/.dircolors
