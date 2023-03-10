@@ -3,6 +3,12 @@ if [ -f ~/solarized/dircolors-solarized/dircolors.ansi-dark ]; then
     eval $(gdircolors ~/solarized/dircolors-solarized/dircolors.ansi-dark)
 fi
 
+## ls color (for ubuntu)
+if [ -f ~/.dircolors ]; then
+  eval $(dircolors -b ~/.dircolors)
+fi
+
+
 # Locale Settings
 ## LANGを設定しとかないとwgetなどでエラーになる。
 ## デフォルト指定なしになる。ターミナルの設定（起動時にlocale設定）がうまく動いていない？

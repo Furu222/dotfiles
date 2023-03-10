@@ -31,4 +31,5 @@ git pull origin master
 if type "dircolors" > /dev/null 2>&1
 then
   dircolors -p > ~/.dircolors
+  sed -ie 's/OTHER_WRITABLE 34;42/OTHER_WRITABLE 36/g' ~/.dircolors
 fi
