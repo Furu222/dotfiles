@@ -24,3 +24,10 @@ fi
 
 cd ${ctdir}
 git pull origin master
+
+# export ls color to file
+## if 777 directory is missmatch color in results of the ls command, rewrite OTEHR_WRITEABLE
+if type "dircolors" > /dev/null 2>&1
+then
+  dircolors -p > ~/.dircolors
+fi
