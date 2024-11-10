@@ -38,6 +38,11 @@ if [[ ! $PATH =~ 'MacVim' ]]; then
   [[ $(uname -a) =~ Mac ]]; export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 fi
 
+## for tfenv
+if [[ ! $PATH =~ 'tfenv' ]]; then
+  export PATH=$PATH:~/.tfenv/bin
+fi
+
 ## for self make cmd
 if [ ! $(echo $PATH | grep '~/bin/:') ]; then
   export PATH=~/bin:$PATH

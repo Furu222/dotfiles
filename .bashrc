@@ -131,8 +131,15 @@ function __terraform_ps1() {
   fi
 }
 
+## show vim if temp shell mode(use :sh)
+function __vim_ps1() {
+  if [ -n "$VIMRUNTIME" ]; then
+    echo " (vim)"
+  fi
+}
+
 #export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[00m\]\\$ " # non-terraform
-export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[35m\]\$(__terraform_ps1)\[\033[00m\]\\$ "
+export PS1="\[\033[34m\][\w]\[\033[31m\]\$(__git_ps1)\[\033[35m\]\$(__terraform_ps1)\[\033[36m\]\$(__vim_ps1)\[\033[00m\]\\$ "
 ##### End PS1#####
 
 ##### Start Other Settings #####
