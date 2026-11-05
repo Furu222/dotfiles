@@ -89,6 +89,20 @@ alias brewc='brew cask'
 ###### End alias ######
 
 
+# 初回はbcコマンド起動
+if [[ $- == *i* ]]; then   # 対話シェルのときだけ
+    _lockfile="${XDG_RUNTIME_DIR:-/tmp}/bc_first_console_${USER}.lock"
+    exec {_bc_fd}>"$_lockfile" # ファイルディスクリプタ取得
+    if flock -n "$_bc_fd"; then
+        bc -q <(echo "scale=3") -
+    else
+        # 2つ目以降のコンソール: 何もしない
+        exec {_bc_fd}>&-   # 不要なfdを閉じる
+    fi
+    unset _lockfile
+fi
+
+
 ##### Start Completion #####
 # git-completion
 if [ -f "${HOME}/dotfiles/.git-completion.bash" -a -f "${HOME}/dotfiles/.git-prompt.sh" ] ; then
